@@ -4,8 +4,8 @@ params.f1 = 'file1'
 params.f2 = false
 
 if (!params.f2){
-  //fe = Channel.create()
-  fe = []
+  fe = Channel.create()
+  //fe = []
 }else{
   Channel.fromPath(params.f2)
     .set { fe; }
