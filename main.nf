@@ -5,7 +5,7 @@ params.f2 = false
 
 if (!params.f2){
   fe = Channel.create()
-  //fe = []
+  //fe = Channel.empty()
 }else{
   Channel.fromPath(params.f2)
     .set { fe; }
@@ -50,7 +50,7 @@ process p2 {
 
     input:
     file file2 from f2
-    file file3 from f3
+    file file3 from f3.ifEmpty([])
     
     output:
     file 'file4' into f4
